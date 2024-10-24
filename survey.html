@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CS Department Survey</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="assets/css/survey_style.css" rel="stylesheet">
+
+</head>
+<body class="bg-light">
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <img class="logo p-2" src="assets/img/logo.png" alt="George Mason University logo">
+        <h1 class="p-2 mt-4" style="color:#006633;"> Survey</h1>
+    </div>
+
+  <form id="survey-form" autocomplete="on">
+    <!-- FIRSTNAME -->
+    <div class="form-group required">
+      <label for="firstname" class="control-label">Firstname:</label>
+      <input type="text" id="username" class="form-control" required "Please enter a username" autofocus>
+    </div>
+
+    <!-- LASTNAME -->
+    <div class="form-group required">
+      <label for="lastname" class="control-label">Lastname:</label>
+      <input type="text" id="username" class="form-control" required>
+    </div>
+
+    <!-- ADDRESS -->
+    <div class="form-group required">
+      <label for="address" class="control-label">Street Address:</label>
+      <input type="text" id="address" class="form-control" required>
+    </div>
+
+    <div class="form-row">
+      <!-- CITY -->
+      <div class="form-group required col-md-6">
+        <label for="city" class="control-label">City:</label>
+        <input type="text" id="city" class="form-control" required>
+      </div>
+
+      <!-- STATE -->
+      <div class="form-group required col-md-4">
+        <label for="state" class="control-label">State:</label>
+        <input type="text" id="state" class="form-control" required>
+      </div>
+
+      <!-- ZIP -->
+      <div class="form-group required col-md-2">
+        <label for="zip" class="control-label">ZIP:</label>
+        <input type="text" id="zip" class="form-control" required>
+      </div>
+    </div>
+
+    <!-- PHONE -->
+    <div class="form-group required">
+      <label for="telephone"  class="control-label">Telephone:</label>
+      <input type="tel" id="telephone" class="form-control" required placeholder="000-000-0000">
+    </div>
+
+    <!-- EMAIL -->
+    <div class="form-group required">
+      <label for="email" class="control-label">Email:</label>
+      <input type="email" id="email" class="form-control" required placeholder="abc.xyz@gmail.com">
+    </div>
+
+    <!-- DATE OF SURVEY -->
+    <div class="form-group required">
+      <label for="surveyDate" class="control-label">Date of Survey:</label>
+      <input type="date" id="surveyDate" class="form-control" required>
+    </div>
+
+    <!-- CHECKBOXES ABOUT STUDENT LIKINGS -->
+    <div class="form-group">
+      <label>Liked most about the campus:</label><br>
+      <div class="form-check form-check-inline">
+        <input type="checkbox" id="likedStudents" class="form-check-input" value="Students">
+        <label class="form-check-label" for="likedStudents">Students</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="checkbox" id="likedLocation" class="form-check-input" value="Location">
+        <label class="form-check-label" for="likedLocation">Location</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="checkbox" id="likedCampus" class="form-check-input" value="Campus">
+        <label class="form-check-label" for="likedCampus">Campus</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="checkbox" id="likedAtmosphere" class="form-check-input" value="Atmosphere">
+        <label class="form-check-label" for="likedAtmosphere">Atmosphere</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="checkbox" id="likedDormRooms" class="form-check-input" value="Dorm Rooms">
+        <label class="form-check-label" for="likedDormRooms">Dorm Rooms</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="checkbox" id="likedSports" class="form-check-input" value="Sports">
+        <label class="form-check-label" for="likedSports">Sports</label>
+      </div>
+    </div>
+
+    <!-- RADIO BUTTONS -->
+    <div class="form-group">
+      <label>How did you become interested in the university?</label><br>
+      <div class="form-check form-check-inline">
+        <input type="radio" id="interestFriends" name="interest" class="form-check-input" value="Friends">
+        <label class="form-check-label" for="interestFriends">Friends</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" id="interestTV" name="interest" class="form-check-input" value="Television">
+        <label class="form-check-label" for="interestTV">Television</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" id="interestInternet" name="interest" class="form-check-input" value="Internet">
+        <label class="form-check-label" for="interestInternet">Internet</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" id="interestOther" name="interest" class="form-check-input" value="Other">
+        <label class="form-check-label" for="interestOther">Other</label>
+      </div>
+    </div>
+
+    <!-- RAFFLE -->
+    <div class="form-group required">
+      <label for="raffle" class="control-label">Enter at least 10 comma-separated numbers (1-100):</label>
+      <input type="text" id="raffle" class="form-control" required placeholder="e.g., 12,45,78,34,99,2,5,89,56,23">
+      <small id="raffleHelp" class="form-text text-muted">Please enter at least 10 numbers between 1 and 100.</small>
+    </div>
+
+
+    <!-- ADDITIONAL COMMENTS TEXT AREA-->
+    <div class="form-group">
+      <label for="additionalComments">Additional Comments:</label>
+      <textarea id="additionalComments" class="form-control" rows="4"></textarea>
+    </div>
+
+    <!-- HS GRADUATION MONTH -->
+    <div class="form-group">
+      <label for="graduationMonth">High-school Graduation Month:</label>
+      <input list="months" id="graduationMonth" class="form-control">
+      <datalist id="months">
+        <option value="January">
+        <option value="February">
+        <option value="March">
+        <option value="April">
+        <option value="May">
+        <option value="June">
+        <option value="July">
+        <option value="August">
+        <option value="September">
+        <option value="October">
+        <option value="November">
+        <option value="December">
+      </datalist>
+    </div>
+
+    <!-- HS GRADUATION YEAR -->
+    <div class="form-group">
+      <label for="graduationYear">High-school Graduation Year:</label>
+      <input type="text" id="graduationYear" class="form-control">
+    </div>
+
+    <!-- RECOMMENEDATION DROPDOWN -->
+    <div class="form-group">
+      <label for="recommendation">Likelihood of Recommending:</label>
+      <select id="recommendation" class="form-control">
+        <option value="veryLikely">Very Likely</option>
+        <option value="likely">Likely</option>
+        <option value="unlikely">Unlikely</option>
+      </select>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn headbtn btn-success">Submit</button>
+      <button type="reset" class="btn headbtn btn-danger">Cancel</button>
+    </div>
+    
+  </form>
+</div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- JavaScript to set focus on the first text field -->
+  <script>
+    document.getElementById('username').focus();
+  </script>
+  <script>
+    document.getElementById('survey-form').addEventListener('submit', function(event) {
+      // Raffle validation
+      const raffleInput = document.getElementById('raffle').value;
+      const raffleNumbers = raffleInput.split(',').map(num => parseInt(num.trim()));
+      
+      // Validate if there are at least 10 numbers
+      if (raffleNumbers.length < 10) {
+        alert('Please enter at least 10 numbers in the Raffle field.');
+        event.preventDefault(); // Prevent form submission
+        return;
+      }
+      
+      // Validate each number is between 1 and 100
+      for (let number of raffleNumbers) {
+        if (isNaN(number) || number < 1 || number > 100) {
+          alert('Each number must be between 1 and 100.');
+          event.preventDefault(); // Prevent form submission
+          return;
+        }
+      }
+      
+      // If validation passes
+      alert('Form submitted successfully! You may win a free movie ticket.');
+    });
+  
+    // Confirmation for the Cancel button
+    document.querySelector('button[type="reset"]').addEventListener('click', function(event) {
+      if (!confirm("Are you sure you want to reset the form?")) {
+        event.preventDefault(); // Prevent form from resetting
+      }
+    });
+  </script>
+  
+  
+</body>
+</html>
