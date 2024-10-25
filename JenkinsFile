@@ -9,7 +9,9 @@ pipeline{
                 script{
                     checkout scm
                     sh "docker login -u kadiyalajai -p $DOCKERHUB_PASS"
-                    sh "docker build -t kadiyalajai/swe645-assignment2:${env.BUILD_ID}"
+                    sh '''cd app 
+                    docker build -t kadiyalajai/swe645-assignment2:${env.BUILD_ID}
+                    '''
                 }
             }
         }
