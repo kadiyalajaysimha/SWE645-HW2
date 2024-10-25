@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: homeAppDeployment
+  name: homeappdeployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: homeApp
+      app: homeapp
   template:
     metadata:
       labels:
-        app: homeApp
+        app: homeapp
     spec:
       containers:
-        - name: homeApp
+        - name: homeapp
           image: IMAGE_NAME
           ports:
             - containerPort: 8080
