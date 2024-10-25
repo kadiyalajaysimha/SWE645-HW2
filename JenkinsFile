@@ -9,7 +9,9 @@ pipeline{
             steps{
                 script{
                     checkout scm
+                    withCredentials([usernamePassword(credentialsId: 'docker-pass', usernameVariable: 'DOCKERHUB_USERNAME', passwordVariable: 'DOCKERHUB_PASSWORD')]) {
                     sh "docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD"
+                    }
                     sh '''cd app 
                     docker build -t kadiyalajai/swe645-assignment2:${env.BUILD_ID}
                     '''
