@@ -16,4 +16,4 @@ spec:
         - name: homeapp
           image: IMAGE_NAME
           ports:
-            - containerPort: 8080
+            - containerPort: 80
