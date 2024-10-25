@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: homeApp
-          image: ${IMAGE_NAME}
+          image: { { IMAGE_NAME } }
           ports:
             - containerPort: 8080
