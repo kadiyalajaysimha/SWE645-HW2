@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        DOCKERHUB_PASS = credentails('docker-pass')
+        DOCKERHUB_PASS = credentials('docker-pass')
     }
     stages{
         stage("Checkout and Build a Docker image for the web app"){
