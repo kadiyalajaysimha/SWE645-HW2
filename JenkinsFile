@@ -1,14 +1,15 @@
 pipeline{
     agent any
     environment{
-        DOCKERHUB_PASS = credentials('docker-pass')
+        DOCKERHUB_USERNAME = credentials('docker-pass')
+        DOCKERHUB_PASSWORD = credentials('docker-pass')
     }
     stages{
         stage("Checkout and Build a Docker image for the web app"){
             steps{
                 script{
                     checkout scm
-                    sh "docker login -u kadiyalajai -p $DOCKERHUB_PASS"
+                    sh "docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD"
                     sh '''cd app 
                     docker build -t kadiyalajai/swe645-assignment2:${env.BUILD_ID}
                     '''
