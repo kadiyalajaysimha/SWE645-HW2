@@ -1,0 +1,35 @@
+pipeline{
+    agent any
+    environment{
+        DOCKERHUB_PASS = credentails('docker-pass')
+    }
+    stages{
+        stage("Checkout and Build a Docker image for the web app"){
+            steps{
+                script{
+                    checkout scm
+                    sh "docker login -u kadiyalajai -p $DOCKERHUB_PASS"
+                    sh "docker build -t kadiyalajai/swe645-assignment2:${env.BUILD_ID}"
+                }
+            }
+        }
+        stage("Pushing image to DockerHub"){
+            steps{
+                script{
+                    sh "docker push kadiyalajai/swe645-assignment2:${env.BUILD_ID}"
+                }
+            }
+        }
+        stage("Deploy to Rancher Kuberentes Cluster"){
+            steps{
+                script{
+                    sh "sed -i 's/${IMAGE_NAME}/SWE645-Assignment2:${env.BUILD_ID}' deployment.yaml"
+                    withCredentials([file(credentailsId: 'kube-config', variable:'KUBECONFIG')]){
+                        sh "kubectl --kubeconfig=$KUBECONFIG apply -f deployment.yaml"
+                        sh "kubectl --kubeconfig=$KUBECONFIG apply -f service.yaml"
+                    }
+                }
+            }
+        }
+    }
+}
